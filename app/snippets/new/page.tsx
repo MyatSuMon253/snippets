@@ -1,5 +1,5 @@
 import { db } from "@/app/db";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 const SnippetCreatePage = () => {
   async function createSnippet(formData: FormData) {
@@ -17,12 +17,11 @@ const SnippetCreatePage = () => {
         code,
       },
     });
-    console.log(snippet);
 
     // redirect the user back to the root route
     redirect("/");
   }
-
+  
   return (
     <form action={createSnippet}>
       <h3 className="font-bold m-3">Create a Snippet</h3>
