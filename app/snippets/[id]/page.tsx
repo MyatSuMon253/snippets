@@ -2,6 +2,17 @@ import { db } from "@/app/db";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import * as actions from "../../actions";
+
+// every 3sec the next request to this route will trigger a rerender(time based caching)
+// export const revalidate = 3
+
+// dump cache for everything in a page (on demand caching)
+// revalidatePath('/snippets')
+
+// two warys of disable all caching for a route (disable caching)
+// export const revalidate = 0
+// export const dynamic = 'force-dynamic'
+
 interface SnippetShowPageProps {
   params: {
     id: string;
