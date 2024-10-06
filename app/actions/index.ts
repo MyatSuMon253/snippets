@@ -40,12 +40,12 @@ export async function createSnippet(
     }
 
     // create a new record in the database
-    // const snippet = await db.snippet.create({
-    //   data: {
-    //     title,
-    //     code,
-    //   },
-    // });
+    const snippet = await db.snippet.create({
+      data: {
+        title,
+        code,
+      },
+    });
 
     // redirect("/"); // redirect is also one kind of error so it can't be use in try catch block
     // throw new Error("Failed to save to database");
